@@ -1,0 +1,40 @@
+body { background-color: #fff; }
+h1 { color: black; font-family: roboto; display: flex; }
+p { color: gray; }
+ul { list-style: inside; margin: 1rem 0 0 1rem; }
+
+section { display: flex; }
+section ul { flex: 1; margin: 1rem; padding: 1rem; background: skyblue; }
+
+header {
+    height: 50vh;
+    position: relative;
+
+    background-image: url("https://wallpaperscraft.com/image/bridge_night_lights_san_francisco_california_usa_54899_2048x1152.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    z-index: 0;
+}
+
+header:before { content: ""; display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: var(--scrim); z-index: 0; }
+header:before { content: ""; display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: var(--scrim); z-index: 0; }
+
+/* Skew Effect */
+.skew {
+    width: 100%;
+    display: block;
+    height: 200px;
+    background: white;
+    position: absolute;
+    top: calc(100% - 100px); left: 0;
+    z-index: 1;
+    transform: skewY(-4deg);
+    -webkit-backface-visibility: hidden;
+    outline: 1px solid transparent;
+}
+
+main { background: var(--theme-primary); }
+footer { background: var(--theme-primary); }
+
+.wrapper { width: 1140px; margin: 0 auto; background: rgba(255,255,255, .25); }
