@@ -1,24 +1,22 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body { background-color: #fff; }
 h1 { color: black; font-family: roboto; display: flex; }
 p { color: gray; }
-ul { list-style: inside; margin: 1rem 0 0 1rem; }
-
-section { display: flex; }
-section ul { flex: 1; margin: 1rem; padding: 1rem; background: skyblue; }
+img { max-width: 100%; flex-shrink: 0; }
+ul { list-style: none; }
 
 header {
-    height: 50vh;
     position: relative;
 
-    background-image: url("https://wallpaperscraft.com/image/bridge_night_lights_san_francisco_california_usa_54899_2048x1152.jpg");
+    background-image: url("https://www.americommerce.com/Shared/2017Content/common/images/ecommerce-software.jpg");
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; 
+    background-position: top;
+    background-repeat: no-repeat;
     z-index: 0;
 }
 
-header:before { content: ""; display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: var(--scrim); z-index: 0; }
-header:before { content: ""; display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: var(--scrim); z-index: 0; }
+.scrim:before { content: ""; display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: var(--scrim); z-index: 0; }
 
 /* Skew Effect */
 .skew {
@@ -34,7 +32,37 @@ header:before { content: ""; display: block; height: 100%; width: 100%; position
     outline: 1px solid transparent;
 }
 
-main { background: var(--theme-primary); }
-footer { background: var(--theme-primary); }
+main { background: var(--bg-lite-primary); }
+footer { background: var(--bg-dark-primary); }
 
-.wrapper { width: 1140px; margin: 0 auto; background: rgba(255,255,255, .25); }
+h2 { font-size: 28px; font-weight: 700; line-height: 32px; height: 47px; margin-bottom: 15px; position: relative; }
+h2:after { 
+    content: "";
+    display: block;
+    background: rgb(255, 112, 62);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 90px;
+    height: 3px;
+}
+
+h3 { font-size: 16px; font-weight: 500; line-height: 26px; }
+p { font-size: 15px; line-height: 30px; }
+
+.flex-vertical,
+.flex-horizontal { min-height: 1px; min-width: 1px; }
+
+.flex-vertical > *,
+.flex-horizontal > * { min-height: 1px; min-width: 1px; }
+
+
+@media (min-width: 0) and (max-width: 768px) {
+    .wrapper { width: 100%; margin: 0 auto; }
+}
+@media (min-width: 769px) and (max-width: 1024px) { 
+    .wrapper { width: 95%; margin: 0 auto; }
+}
+@media (min-width: 1025px) { 
+    .wrapper { width: 100%; max-width: 1300px; margin: 0 auto; }
+}
