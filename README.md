@@ -2,12 +2,12 @@
 
 This repo contains web pages for Americommerce. 
 
-- The **app** folder contains the development version. 
-- The **dist** folder contains the production version.
+> The **app** folder contains the development version.
+> The **dist** folder contains the production version.
 
-### Pages
+### Page Links
 
-- [Ecommerce Management Console](https://oneezy.github.io/wwwAC/dist/index.html) (devevelopment)
+- [Ecommerce Management Console](https://oneezy.github.io/wwwAC/dist/index.html)
 
 ## Usage
 
