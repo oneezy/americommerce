@@ -268,8 +268,8 @@
     box-shadow: 0 0 1px rgba(255,255,255,0);
 }
 
-.new-skew--normal:before { content: ""; transform: skewY(0deg) scale(5,1) translateX(39%) translateY(25%); background: #f5f4f4; z-index: -3; }
-.new-skew--reverse:before  { content: ""; transform: skewY(0deg) scale(5,1) translateX(39%) translateY(-25%); background: #f5f4f4; z-index: -3; }
+.new-skew--normal:before { content: ""; transform: skewY(0deg) scale(5,1) translateX(40%) translateY(25%); background: #f5f4f4; z-index: -3; }
+.new-skew--reverse:before  { content: ""; transform: skewY(0deg) scale(5,1) translateX(40%) translateY(-25%); background: #f5f4f4; z-index: -3; }
 
 .new-skew--normal:after { content: ""; transform: skewY(-7.2deg) scale(5,1); background: #f5f4f4; }
 .new-skew--reverse:after  { content: ""; transform: skewY(7.2deg) scale(5,1); background: #f5f4f4; }
