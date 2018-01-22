@@ -1,5 +1,7 @@
 # oneezy-build
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/oneezy/wwwAC.svg)](https://greenkeeper.io/)
+
 My build process with **Gulp** + **BrowserSync** + other cool stuff.
 
 ## Usage
