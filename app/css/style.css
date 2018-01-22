@@ -1,55 +1,313 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/*
+   _____ _________     ___      ______  _____
+  / ____|__   __\ \   / / |    |  ____|/ ____|
+ | (___    | |   \ \_/ /| |    | |__  | (___
+  \___ \   | |    \   / | |    |  __|  \___ \
+  ____) |  | |     | |  | |____| |____ ____) |
+ |_____/   |_|     |_|  |______|______|_____/
 
-body { background-color: #fff; }
-h1 { color: black; font-family: roboto; display: flex; }
-p { color: gray; }
-img { max-width: 100%; flex-shrink: 0; }
-ul { list-style: none; }
+*/
+/* Highlighting & Selection */
+.oneezy header *::-moz-selection { background: rgba(255,255,255,.2); color: white; }
+.oneezy header *::selection { background: rgba(255,255,255,.2); color: white; }
 
-header {
+.oneezy main h2::-moz-selection { background: rgba(255,112,62,1); color: rgba(255,255,255,.9); }
+.oneezy main h2::selection { background: rgba(255,112,62,1); color: rgba(255,255,255,.9); }
+.oneezy main h3::-moz-selection { background: rgba(255,112,62,1); color: rgba(255,255,255,.9); }
+.oneezy main h3::selection { background: rgba(255,112,62,1); color: rgba(255,255,255,.9); }
+.oneezy main p::-moz-selection { background: rgba(0,0,0,.1); color: inherit; }
+.oneezy main p::selection { background: rgba(0,0,0,.1); color: inherit; }
+
+.oneezy footer *::-moz-selection { background: rgba(255,255,255,.1); color: white; }
+.oneezy footer *::selection { background: rgba(255,255,255,.1); color: white; }
+
+.oneezy nav *::-moz-selection { background: rgba(255,255,255,0); color: inherit; }
+.oneezy nav *::selection { background: rgba(255,255,255,0); color: inherit; }
+
+.oneezy img::-moz-selection { background: rgba(255,255,255,0); color: white; }
+.oneezy img::selection { background: rgba(255,255,255,0); color: white; }
+
+.oneezy .btn::-moz-selection { background: rgba(255,255,255,0); color: inherit; }
+.oneezy .btn::selection { background: rgba(255,255,255,0); color: inherit; }
+
+
+/* Buttons */
+.oneezy .btn {
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px 25px;
+    text-decoration: none;
+    box-shadow: -3px 4px 15px 0px rgba(181, 30, 0, 0.2);
+    outline: 0;
     position: relative;
-
-    background-image: url("https://www.americommerce.com/Shared/2017Content/common/images/ecommerce-software.jpg");
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
     z-index: 0;
+    will-change: opacity;
 }
 
-.scrim:before { content: ""; display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: var(--scrim); z-index: 0; }
-
-/* Skew Effect */
-.skew {
-    width: 100%;
-    display: block;
-    height: 200px;
-    background: white;
+.oneezy .btn:before,
+.oneezy .btn:after {
+    content: "";
     position: absolute;
-    top: calc(100% - 100px); left: 0;
-    z-index: 1;
-    transform: skewY(-4deg);
-    -webkit-backface-visibility: hidden;
-    outline: 1px solid transparent;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    will-change: opacity;
+    border-radius: 3px;
+    outline: 0;
 }
 
-main { background: var(--bg-lite-primary); }
-footer { background: var(--bg-dark-primary); }
+.oneezy .btn:before {
+    background: #f74f39;
+    background: -moz-linear-gradient(left, #fd7a2c 0%, #fc6047 100%);
+    background: -webkit-linear-gradient(left, #fd7a2c 0%, #fc6047 100%);
+    background: linear-gradient(to right, #fd7a2c 0%, #fc6047 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd7a2c', endColorstr='#fc6047', GradientType=1);
+    opacity: 1;
+}
 
-h2 { font-size: 28px; font-weight: 700; line-height: 32px; height: 47px; margin-bottom: 15px; position: relative; }
-h2:after { 
+.oneezy .btn:after { background: #f74f39; opacity: 0; }
+
+.oneezy .btn:hover:after,
+.oneezy .btn:focus:after,
+.oneezy .btn:active :after { opacity: 1; will-change: opacity; transition: opacity 0.5s ease; }
+
+/*=====================================================
+                                                     
+  ##   ##  #####    ###    ####    #####  #####    
+  ##   ##  ##      ## ##   ##  ##  ##     ##  ##   
+  #######  #####  ##   ##  ##  ##  #####  #####    
+  ##   ##  ##     #######  ##  ##  ##     ##  ##   
+  ##   ##  #####  ##   ##  ####    #####  ##   ##  
+                                                     
+======================================================*/
+.oneezy header { position: relative; background-image: url("../images/management-console-01.png"); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; }
+.oneezy header .free-trial .btn { padding: 11px 20px; }
+.oneezy header h1 { color: rgb(255, 255, 255); font-size: 72px; font-weight: 700; text-align: center; text-transform: uppercase; margin: 2rem 0; }
+.oneezy header p { color: rgb(255, 255, 255); font-size: 20px; line-height: 32px; text-align: center; max-width: 550px; }
+
+
+/* Navigation
+*******************************/
+.oneezy header nav ul li { font-size: 14px; font-weight: 700; position: relative; }
+.oneezy header nav ul li a { color: rgb(255, 255, 255); cursor: pointer; display: inline-block; font-size: 14px; font-weight: 700; line-height: 16px; margin: 0 .5rem; padding: 5px 8px; }
+.oneezy header nav ul li a .material-icons { position: absolute; left: 100%; bottom: 0; }
+
+/* Active Border */
+.oneezy header nav ul li a:after { content: ""; display: block;  position: absolute; top: 100%; left: 50%; margin: 0 0 0 -25%; width: 50%; height: 2px; background: #ff703e; z-index: 2;
+    opacity: 0; 
+    transform: scale(0,1); 
+    transition: .25s ease-in-out; 
+    will-change: opacity transform; 
+}
+.oneezy header nav ul li:hover a:after,
+.oneezy header nav ul li:focus a:after,
+.oneezy header nav ul li:active a:after { opacity: 1; transform: scale(1,1); }
+
+/* Dropdown Menu */
+.oneezy header nav ul li.dropdown-resources > a:after { left: 25%; width: 130px; }
+.oneezy header nav ul li.dropdown-resources ul { opacity: 0; display: block; position: absolute; top: 100%; left: 0; background: white; color: black; width: 130px; border-radius: 0 0 3px 3px; overflow: hidden; z-index: 1; transform: scale(1, 0) translateY(2px); transform-origin: top; transition: .1s .22s ease-in-out; will-change: transform opacity; }
+.oneezy header nav ul li.dropdown-resources ul li { display: block; padding: .25rem 0; }
+.oneezy header nav ul li.dropdown-resources ul li a { display: block; color: black; font-weight: 500; }
+.oneezy header nav ul li.dropdown-resources ul li a:after { display: none; }
+
+/* Active Dropdown Menu */
+.oneezy header nav ul li.dropdown-resources:hover ul,
+.oneezy header nav ul li.dropdown-resources:focus ul,
+.oneezy header nav ul li.dropdown-resources:active ul { opacity: 1; transform: scale(1, 1) translateY(2px); }
+
+.oneezy header nav ul li.dropdown-resources ul li:hover { background: #ff703e; }
+.oneezy header nav ul li.dropdown-resources ul li:hover a { color: white; }
+
+/* Skew */
+.oneezy header .skew { top: calc(100% - 22%); }
+
+
+
+/*========================================
+                                        
+  ###    ###    ###    ##  ##     ##  
+  ## #  # ##   ## ##   ##  ####   ##  
+  ##  ##  ##  ##   ##  ##  ##  ## ##  
+  ##      ##  #######  ##  ##    ###  
+  ##      ##  ##   ##  ##  ##     ##  
+                                        
+=========================================*/
+
+.oneezy main { overflow: hidden; }
+.oneezy main h2 { font-size: 28px; font-weight: 700; padding: 0 0 15px; margin-bottom: 15px; position: relative; }
+.oneezy main h2:after { 
     content: "";
     display: block;
     background: rgb(255, 112, 62);
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    top: 100%;
+    left: 0;
     width: 90px;
     height: 3px;
 }
 
-h3 { font-size: 16px; font-weight: 500; line-height: 26px; }
-p { font-size: 15px; line-height: 30px; }
+.oneezy main h2.bar-center:after { left: 50%; margin: 0 0 0 -45px; }
+.oneezy main h3 { font-size: 16px; font-weight: 500; line-height: 26px; margin: 0 0 1rem; position: relative; display: inline-block; }
+.oneezy main h3:before { content: "\E3E7"; font-family: "Material Icons"; display: block; position: absolute; left: 100%; font-size: 24px; color: rgb(255, 112, 62); }
+.oneezy main p { font-size: 15px; line-height: 30px; }
+.oneezy main article { position: relative; z-index: 1; }
+.oneezy main article figure { text-align: center; }
+.oneezy main article .oneezy-card { margin: 1rem; padding: 0 0 2rem; text-align: center; }
+.oneezy main article.section-center h3 { text-align: left; }
 
+.oneezy main hr { background: rgba(0,0,0,.12); margin: 4rem auto 10rem; position: relative; z-index: 2; width: 50%; max-width: 750px; height: 1px; border: none; }
+
+
+
+/*=====================================================
+                                                     
+  #####   #####    #####   ######  #####  #####    
+  ##     ##   ##  ##   ##    ##    ##     ##  ##   
+  #####  ##   ##  ##   ##    ##    #####  #####    
+  ##     ##   ##  ##   ##    ##    ##     ##  ##   
+  ##      #####    #####     ##    #####  ##   ##  
+                                                     
+======================================================*/
+
+.oneezy footer { overflow: hidden; background: #323031; background: var(--bg-dark-primary); color: #fff; padding: 3rem 0; margin: 0; position: relative; z-index: 1; }
+.oneezy footer .made-with-heart { font-size: 12px; padding: 1rem 0; }
+.oneezy footer nav section { margin: 0 0 1rem; }
+.oneezy footer nav section h4 { color: #fff; font-size: 14px; margin: 0 0 1rem; font-weight: initial; }
+.oneezy footer nav section a { color: #fff; opacity: .6; display: block; font-size: 12px; margin: 0 0 .5rem; }
+.oneezy footer aside section .affiliate-logo { opacity: .6; margin: 0 2rem 0 0; }
+.oneezy footer aside p { color: #666; padding: 0 2rem 0 0; }
+.oneezy footer .copyright { font-size: 12px; color: #666; text-align: right; margin: 2rem 0 0; }
+
+
+
+
+
+/*=====================
+                     
+  #####  ##    ##  
+  ##      ##  ##   
+  #####    ####    
+  ##      ##  ##   
+  ##     ##    ##  
+                     
+=====================*/
+
+/* Transparent Overlay */
+.scrim:before { content: ""; display: block; height: 100%; width: 100%; position: absolute; top: 0; left: 0; background: rgba(0,0,0,.64); background: var(--scrim); z-index: -1; }
+
+/* Skew Effect */
+.skew {
+    background: inherit;
+    width: 100%;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    transform-origin: 50%;
+	padding: 1px; 
+    outline: 1px solid transparent;
+    box-shadow: 0 0 1px rgba(255,255,255,0);
+    /* backface-visibility: hidden; */
+    /* background-clip: content-box; */
+    /* -webkit-backface-visibility: hidden;  */
+    /* -webkit-background-clip: content-box; */
+}
+
+.skew-normal { transform: skewY(-7.2deg) scale(5,1); bottom: 0; height: 100%; }
+
+/* 
+.oneezy main .skew-normal:after {
+    background: #f5f4f4;
+    transform: rotate(30deg) scale(5,1) translateY(100%);
+    height: 50%;
+    content: "";
+    display: block;
+}
+
+.oneezy main .skew-reverse:after {
+    background: #f5f4f4;
+    transform: rotate(-30deg) scale(5,1) translateY(-30%);
+    height: 50%;
+    content: "";
+    display: block;
+} */
+
+
+.new-skew--normal,
+.new-skew--reverse  { 
+    width: 100%;
+    height: 33%;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    transform-origin: 50%;
+}
+
+.new-skew--normal   { top: calc(100% - 41%); background: transparent; }
+.new-skew--reverse  { bottom: calc(100% - 36%); background: transparent; }
+
+.new-skew--normal:before,
+.new-skew--reverse:before,
+.new-skew--normal:after,
+.new-skew--reverse:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    z-index: -2;
+    transform-origin: center;
+	padding: 1px; 
+    outline: 1px solid transparent;
+    box-shadow: 0 0 1px rgba(255,255,255,0);
+}
+
+.new-skew--normal:before { content: ""; transform: skewY(0deg) scale(5,1) translateX(39%) translateY(25%); background: #f5f4f4; z-index: -3; }
+.new-skew--reverse:before  { content: ""; transform: skewY(0deg) scale(5,1) translateX(39%) translateY(-25%); background: #f5f4f4; z-index: -3; }
+
+.new-skew--normal:after { content: ""; transform: skewY(-7.2deg) scale(5,1); background: #f5f4f4; }
+.new-skew--reverse:after  { content: ""; transform: skewY(7.2deg) scale(5,1); background: #f5f4f4; }
+
+.new-skew--normal,
+.new-skew--normal:before,
+.new-skew--normal:after,
+.new-skew--reverse,
+.new-skew--reverse:before,
+.new-skew--reverse:after { will-change: transform; transition: .5s transform ease-in-out; }
+
+.oneezy-card { background: white; border-radius: 3px; border-radius: 2px; box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
+
+.bg-white { background: #fff; }
+.bg-grey { background: #f5f4f4; }
+
+.visually-hidden {
+    border: 0 none;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; 
+}
+
+
+/*=====================================
+                                     
+  ##   ##    ###     ####  ##  ##  
+  ##   ##   ## ##   ##     ## ##   
+  #######  ##   ##  ##     ####    
+  ##   ##  #######  ##     ## ##   
+  ##   ##  ##   ##   ####  ##  ##  
+                                     
+=====================================*/
+ 
 .flex-vertical,
 .flex-horizontal { min-height: 1px; min-width: 1px; }
 
@@ -57,12 +315,67 @@ p { font-size: 15px; line-height: 30px; }
 .flex-horizontal > * { min-height: 1px; min-width: 1px; }
 
 
+
+/*==============================================
+                                              
+  ####    #####  ##   ##  ##   ####  #####  
+  ##  ##  ##     ##   ##  ##  ##     ##     
+  ##  ##  #####  ##   ##  ##  ##     #####  
+  ##  ##  ##      ## ##   ##  ##     ##     
+  ####    #####    ###    ##   ####  #####  
+                                              
+==============================================*/
+
+/* Universal */
+.wrapper { position: relative; z-index: 1; margin: 0 auto; }
+
+.section-center img  { max-height: 275px; }
+
+/* Mobile */
 @media (min-width: 0) and (max-width: 768px) {
-    .wrapper { width: 100%; margin: 0 auto; }
+    .wrapper { width: 90%; }
+    .oneezy header { padding: 35px 0 150px; }
+    .oneezy header h1 { font-size: 48px; }
+    .oneezy header .dropdown-resources > a { pointer-events: none; }
+    .oneezy main hr { width: 80%; }
+    .oneezy main .btn { width: 50%; text-align: center; }
+
+    .new-skew--normal   { display: none; top: calc(100% - 80%); background: transparent; }
+    .new-skew--reverse  { display: none; bottom: calc(100% - -14%); background: transparent; }
 }
+
+/* Tablet */
 @media (min-width: 769px) and (max-width: 1024px) { 
-    .wrapper { width: 95%; margin: 0 auto; }
+    .wrapper { width: 95%; }
+    .oneezy header { padding: 35px 0 150px; }
+    .oneezy header h1 { font-size: 48px; }
+
+    .section-reverse img { transform: scale(1.2,1.2); transform-origin: top left; }
+    .section-normal img  { transform: scale(1.2,1.2); transform-origin: top right; }
+
+    .new-skew--normal   { top: calc(100% - 36%); background: transparent; }
+    .new-skew--reverse  { bottom: calc(100% - 33%); background: transparent; }
+
+    .new-skew--normal:before { content: ""; transform: skewY(0deg) scale(5,1) translateX(39%) translateY(25%); background: #f5f4f4; z-index: -3; }
+    .new-skew--reverse:before  { content: ""; transform: skewY(0deg) scale(5,1) translateX(39%) translateY(-25%); background: #f5f4f4; z-index: -3; }
+    
+    .new-skew--normal:after { content: ""; transform: skewY(7.2deg) scale(5,1); background: #f5f4f4; }
+    .new-skew--reverse:after  { content: ""; transform: skewY(-7.2deg) scale(5,1); background: #f5f4f4; }
+
+    .section-center .new-skew--normal { top: 30%; }
+    
 }
+
+/* Desktop */
 @media (min-width: 1025px) { 
-    .wrapper { width: 100%; max-width: 1300px; margin: 0 auto; }
+    .wrapper { width: 95%; max-width: 1300px; }
+    .oneezy header { padding: 35px 0 150px; }
+
+    .oneezy header .wrapper,
+    .oneezy footer .wrapper { max-width: 1111px; }
+    
+    .section-reverse img { transform: scale(1.2,1.2); transform-origin: bottom right; }
+    .section-normal img  { transform: scale(1.2,1.2); transform-origin: bottom left; }
+
+    .section-center .new-skew--normal { top: 30%; }
 }
