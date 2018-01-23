@@ -37,7 +37,7 @@
     text-transform: uppercase;
     display: inline-block;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 700;
     padding: 15px 25px;
     text-decoration: none;
     box-shadow: -3px 4px 15px 0px rgba(181, 30, 0, 0.2);
@@ -88,16 +88,17 @@
                                                      
 ======================================================*/
 .oneezy header { position: relative; background-image: url("../images/management-console-01.png"); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1; }
+.oneezy header .page-header { margin: 73px 0 24px; }
 .oneezy header .free-trial .btn { padding: 11px 20px; }
-.oneezy header h1 { color: rgb(255, 255, 255); font-size: 72px; font-weight: 700; text-align: center; text-transform: uppercase; margin: 2rem 0; }
-.oneezy header p { color: rgb(255, 255, 255); font-size: 20px; line-height: 32px; text-align: center; max-width: 550px; }
+.oneezy header h1 { color: rgb(255, 255, 255); font-size: 72px; font-weight: 700; text-align: center; text-transform: uppercase; margin: 0; }
+.oneezy header p { color: rgb(255, 255, 255); font-size: 20px; line-height: 1.6; margin: 10px 0 0; text-align: center; max-width: 550px; }
 
 
 /* Navigation
 *******************************/
 .oneezy header nav ul li { font-size: 14px; font-weight: 700; position: relative; }
-.oneezy header nav ul li a { color: rgb(255, 255, 255); cursor: pointer; display: inline-block; font-size: 14px; font-weight: 700; line-height: 16px; margin: 0 .5rem; padding: 5px 8px; }
-.oneezy header nav ul li a .material-icons { position: absolute; left: 100%; bottom: 0; }
+.oneezy header nav ul li a { color: rgb(255, 255, 255); cursor: pointer; display: inline-block; font-size: 14px; font-weight: 700; line-height: 16px; margin: 0 .48rem; padding: 5px 8px; }
+.oneezy header nav ul li a .material-icons { position: absolute; left: calc(100% - 14px); bottom: 0; }
 
 /* Active Border */
 .oneezy header nav ul li a:after { content: ""; display: block;  position: absolute; top: 100%; left: 50%; margin: 0 0 0 -25%; width: 50%; height: 2px; background: #ff703e; z-index: 2;
@@ -297,6 +298,49 @@
     width: 1px; 
 }
 
+/* Browser Sniffing */
+.chrome,
+.safari,
+.firefox,
+.msie,
+.edge { 
+    position: fixed; bottom: 20px; right: 20px; width: 8rem; height: 8rem; border-radius: 100%; z-index: 999;
+    /* -webkit-box-shadow: 0px 0px 84px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 84px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 84px 3px rgba(0,0,0,0.75); */
+}
+
+.chrome {
+  background-image: url("http://icons.iconarchive.com/icons/appicns/simplified-app/256/appicns-Chrome-icon.png");
+  background-repeat: no-repeat;
+  background-size: 8rem 8rem;
+}
+
+.safari {
+  background-image: url("http://icons.iconarchive.com/icons/johanchalibert/mac-osx-yosemite/256/safari-icon.png");
+  background-repeat: no-repeat;
+  background-size: 8rem 8rem;
+}
+
+.firefox {
+  background-image: url("http://icons.iconarchive.com/icons/dakirby309/simply-styled/256/Firefox-icon.png");
+  background-repeat: no-repeat;
+  background-size: 8rem 8rem;
+}
+
+.msie {
+  background-image: url("https://i.imgur.com/PwGsF3A.png");
+  background-repeat: no-repeat;
+  background-size: 8rem 8rem;
+}
+
+.edge {
+  background-image: url("http://icons.iconarchive.com/icons/cornmanthe3rd/metronome/256/Internet-ie-icon.png");
+  background-repeat: no-repeat;
+  background-size: 8rem 8rem;
+}
+
+
 
 /*=====================================
                                      
@@ -370,6 +414,8 @@
 @media (min-width: 1025px) { 
     .wrapper { width: 95%; max-width: 1300px; }
     .oneezy header { padding: 35px 0 150px; }
+    .oneezy header nav { transform: translateY(-1px) translateX(-32px); }
+    .oneezy header .free-trial .btn { margin: 0 8px 0 0; }
 
     .oneezy header .wrapper,
     .oneezy footer .wrapper { max-width: 1111px; }
