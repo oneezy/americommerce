@@ -298,48 +298,6 @@
     width: 1px; 
 }
 
-/* Browser Sniffing */
-.chrome,
-.safari,
-.firefox,
-.msie,
-.edge { 
-    position: fixed; bottom: 20px; right: 20px; width: 8rem; height: 8rem; border-radius: 100%; z-index: 999;
-    /* -webkit-box-shadow: 0px 0px 84px 3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 84px 3px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 84px 3px rgba(0,0,0,0.75); */
-}
-
-.chrome {
-  background-image: url("http://icons.iconarchive.com/icons/appicns/simplified-app/256/appicns-Chrome-icon.png");
-  background-repeat: no-repeat;
-  background-size: 8rem 8rem;
-}
-
-.safari {
-  background-image: url("http://icons.iconarchive.com/icons/johanchalibert/mac-osx-yosemite/256/safari-icon.png");
-  background-repeat: no-repeat;
-  background-size: 8rem 8rem;
-}
-
-.firefox {
-  background-image: url("http://icons.iconarchive.com/icons/dakirby309/simply-styled/256/Firefox-icon.png");
-  background-repeat: no-repeat;
-  background-size: 8rem 8rem;
-}
-
-.msie {
-  background-image: url("https://i.imgur.com/PwGsF3A.png");
-  background-repeat: no-repeat;
-  background-size: 8rem 8rem;
-}
-
-.edge {
-  background-image: url("http://icons.iconarchive.com/icons/cornmanthe3rd/metronome/256/Internet-ie-icon.png");
-  background-repeat: no-repeat;
-  background-size: 8rem 8rem;
-}
-
 
 
 /*=====================================
