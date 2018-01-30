@@ -177,7 +177,7 @@
                                                      
 ======================================================*/
 
-.oneezy footer { overflow: hidden; background: #323031; background: var(--bg-dark-primary); color: #fff; padding: 3rem 0; margin: 0; position: relative; z-index: 1; }
+.oneezy footer { overflow: hidden; background: #323031; background: var(--bg-dark-primary); color: #fff; padding: 3rem 0; margin: 10rem 0 0; position: relative; z-index: 1; }
 .oneezy footer .made-with-heart { font-size: 12px; padding: 1rem 0; }
 .oneezy footer nav section { margin: 0 0 1rem; }
 .oneezy footer nav section h4 { color: #fff; font-size: 14px; margin: 0 0 1rem; font-weight: initial; }
