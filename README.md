@@ -7,7 +7,7 @@ This repo contains web pages for Americommerce.
 
 ### Page Links
 
-- [Ecommerce Management Console](https://oneezy.github.io/wwwAC/dist/index.html)
+- [Ecommerce Management Console](https://oneezy.github.io/americommerce/dist/index.html)
 
 <br>
 <br>
@@ -16,12 +16,12 @@ This repo contains web pages for Americommerce.
 
 ### 1. Clone repo
 ```
-git clone https://github.com/oneezy/wwwAC.git
+git clone https://github.com/oneezy/americommerce.git
 ```
 
 ### 2. Go inside cloned repo
 ```
-cd wwwAC
+cd americommerce
 ```
 
 ### 3. Install all dependencies (make sure nodejs with npm is installed on your machine)
